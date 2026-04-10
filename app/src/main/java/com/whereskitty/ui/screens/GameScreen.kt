@@ -9,7 +9,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.gestures.detectTransformGestures
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -30,7 +29,6 @@ import com.whereskitty.game.GameViewModel
 import com.whereskitty.game.LevelRepository
 import com.whereskitty.scenes.*
 import com.whereskitty.ui.components.CatHintPanel
-import kotlin.math.max
 import kotlin.math.min
 
 @OptIn(ExperimentalMaterial3Api::class)
