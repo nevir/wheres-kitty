@@ -13,17 +13,24 @@
     <!-- Right ear -->
     <path android:fillColor="#E07B39"
         android:pathData="M70,36 L78,20 L62,28 Z"/>
-    <!-- Eyes -->
-    <circle android:fillColor="#33BB55" android:cx="46" android:cy="50" android:r="5"/>
-    <circle android:fillColor="#33BB55" android:cx="62" android:cy="50" android:r="5"/>
-    <circle android:fillColor="#111111" android:cx="46" android:cy="51" android:r="2.5"/>
-    <circle android:fillColor="#111111" android:cx="62" android:cy="51" android:r="2.5"/>
+    <!-- Left eye (green iris) - circle cx=46 cy=50 r=5 -->
+    <path android:fillColor="#33BB55"
+        android:pathData="M41,50 A5,5,0,1,0,51,50 A5,5,0,1,0,41,50 Z"/>
+    <!-- Right eye (green iris) - circle cx=62 cy=50 r=5 -->
+    <path android:fillColor="#33BB55"
+        android:pathData="M57,50 A5,5,0,1,0,67,50 A5,5,0,1,0,57,50 Z"/>
+    <!-- Left pupil - circle cx=46 cy=51 r=2.5 -->
+    <path android:fillColor="#111111"
+        android:pathData="M43.5,51 A2.5,2.5,0,1,0,48.5,51 A2.5,2.5,0,1,0,43.5,51 Z"/>
+    <!-- Right pupil - circle cx=62 cy=51 r=2.5 -->
+    <path android:fillColor="#111111"
+        android:pathData="M59.5,51 A2.5,2.5,0,1,0,64.5,51 A2.5,2.5,0,1,0,59.5,51 Z"/>
     <!-- Nose -->
     <path android:fillColor="#FF9999"
         android:pathData="M51,57 L54,61 L57,57 Z"/>
     <!-- Whiskers -->
-    <path android:strokeColor="#FFFFFF" android:strokeWidth="1.5"
+    <path android:fillColor="#00000000" android:strokeColor="#FFFFFF" android:strokeWidth="1.5"
         android:pathData="M30,55 L48,57 M30,59 L48,59"/>
-    <path android:strokeColor="#FFFFFF" android:strokeWidth="1.5"
+    <path android:fillColor="#00000000" android:strokeColor="#FFFFFF" android:strokeWidth="1.5"
         android:pathData="M78,55 L60,57 M78,59 L60,59"/>
 </vector>
