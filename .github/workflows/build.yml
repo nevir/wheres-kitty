@@ -1,4 +1,4 @@
-name: Build Unsigned APK
+name: Build Debug APK
 
 on:
   push:
@@ -34,27 +34,27 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - name: Build release APK (unsigned)
-        run: ./gradlew assembleRelease --no-daemon
+      - name: Build debug APK (debug-signed, sideloadable)
+        run: ./gradlew assembleDebug --no-daemon
 
       - name: Rename APK
         run: |
           mkdir -p artifacts
-          cp app/build/outputs/apk/release/app-release-unsigned.apk \
-             artifacts/WhereIsKitty-unsigned.apk
+          cp app/build/outputs/apk/debug/app-debug.apk \
+             artifacts/WhereIsKitty.apk
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: WhereIsKitty-unsigned-apk
-          path: artifacts/WhereIsKitty-unsigned.apk
+          name: WhereIsKitty-apk
+          path: artifacts/WhereIsKitty.apk
           retention-days: 30
 
       - name: Build summary
         run: |
           echo "## Build Complete!" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Unsigned APK has been uploaded as a build artifact." >> $GITHUB_STEP_SUMMARY
+          echo "Debug APK (debug-signed, ready to sideload) uploaded as artifact." >> $GITHUB_STEP_SUMMARY
           echo "Download it from the **Artifacts** section above." >> $GITHUB_STEP_SUMMARY
-          APK_SIZE=$(du -sh artifacts/WhereIsKitty-unsigned.apk | cut -f1)
+          APK_SIZE=$(du -sh artifacts/WhereIsKitty.apk | cut -f1)
           echo "APK size: $APK_SIZE" >> $GITHUB_STEP_SUMMARY
